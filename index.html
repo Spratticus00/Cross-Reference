@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#23211f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Cross Reference">
+<meta name="description" content="Chess review board: annotate games, draw arrows, live Stockfish annotations and GIF export.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+
+<title>Cross Reference</title>
+<style>html,body{margin:0;height:100%;background:#23211f}</style>
+<script>
+  // pick the layout: phones and small tablets get the phone layout
+  var q = location.search, pick = /[?&]v=desktop/.test(q) ? 'desktop' : /[?&]v=mobile/.test(q) ? 'mobile' : null;
+  try { if (!pick) pick = localStorage.getItem('crx-layout'); } catch (e) {}
+  if (!pick) pick = (Math.min(screen.width, screen.height) < 820 || matchMedia('(max-width: 900px)').matches) ? 'mobile' : 'desktop';
+  location.replace(pick + '.html');
+</script></head><body></body></html>
